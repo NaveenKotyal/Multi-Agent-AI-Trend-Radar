@@ -1,0 +1,84 @@
+trend_collection_task:
+  description: >
+    Collect recent AI trends related to: {focus_area}.
+
+    Use at most 2 web searches.
+
+    Search query format:
+    - "AI news last 7 days site:techcrunch.com OR site:venturebeat.com"
+    - "AI LLM funding OR regulation OR product launch last 7 days"
+
+    Only use the first 3 organic results per search.
+    Ignore category pages and generic overview pages.
+
+    Focus only on:
+    - Developments from the last 7 days
+    - High-impact product launches, research breakthroughs,
+      funding announcements, or regulatory changes
+
+    Select only the 3 most relevant trends.
+
+    Do not include raw search snippets.
+    Immediately summarize findings.
+    Keep the entire response under 400 words.
+
+  expected_output: >
+    A structured list of 3 trends:
+    - Title
+    - Source
+    - 2-3 sentence summary
+    - Why it matters (1 line)
+
+  agent: trend_aggregator
+
+
+
+insight_analysis_task:
+  description: >
+    Analyze the 3 identified AI trends.
+
+    Evaluate:
+    - Business impact
+    - Strategic importance
+    - Long-term opportunity
+    - Relevance to professionals
+
+    Select the single strongest trend for LinkedIn content.
+
+    Keep analysis concise.
+    Keep output under 300 words.
+
+  expected_output: >
+    Structured output:
+    - Selected Trend
+    - Why This Trend Matters
+    - Business/Professional Opportunity
+    - Clear Key Takeaway (1-2 lines)
+
+  agent: insight_analyst
+
+
+
+linkedin_post_generation_task:
+  description: >
+    Create a LinkedIn post based on the selected trend.
+
+    Structure:
+    1. Strong hook (first 2 lines, scroll-stopping)
+    2. Clear explanation of the trend
+    3. Strategic insight or implication
+    4. Call-to-action question
+    5. 5 relevant hashtags
+
+    Constraints:
+    - Maximum 220 words
+    - Short paragraphs
+    - Professional tone
+    - No emojis
+    - No fluff
+
+  expected_output: >
+    A ready-to-publish LinkedIn post formatted with spacing
+    and clear readability.
+
+  agent: linkedin_content_strategist
