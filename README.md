@@ -37,7 +37,7 @@ Create a `.env` file in the project root with:
 
 | Variable | Purpose |
 |----------|---------|
-| `OPENAI_API_KEY` | LLM API key (used by crewAI for agents). |
+| `GROQ_API_KEY` | LLM API key (used by crewAI for agents). |
 | `SERPER_API_KEY` | [Serper](https://serper.dev) API key for web search (trend aggregation). |
 
 Example:
